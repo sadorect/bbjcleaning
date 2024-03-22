@@ -111,7 +111,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col mb-0">
-                                    <button type="submit" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3" data-loading-text="Loading...">SEND MESSAGE</button>
+                                    <button type="reset" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3" data-loading-text="Loading...">SEND MESSAGE</button>
                                 </div>
                             </div>
                         </form>
