@@ -1,0 +1,22 @@
+$ttl 3600
+@	IN	SOA	jill.ns.cloudflare.com. root.jill.ns.cloudflare.com. (
+			1710822379
+			3600
+			600
+			1209600
+			3600 )
+@	IN	NS	jill.ns.cloudflare.com.
+@	IN	NS	plato.ns.cloudflare.com.
+brightbelljanitors.com.	IN	A	161.97.158.218
+www.brightbelljanitors.com.	IN	A	161.97.158.218
+ftp.brightbelljanitors.com.	IN	A	161.97.158.218
+localhost.brightbelljanitors.com.	IN	A	127.0.0.1
+webmail.brightbelljanitors.com.	IN	A	161.97.158.218
+admin.brightbelljanitors.com.	IN	A	161.97.158.218
+mail.brightbelljanitors.com.	IN	A	161.97.158.218
+brightbelljanitors.com.	IN	MX	5 mail.brightbelljanitors.com.
+brightbelljanitors.com.	IN	TXT	"v=spf1 a mx a:brightbelljanitors.com ip4:161.97.158.218 ip4:161.97.158.218 ?all"
+202110._domainkey.brightbelljanitors.com.	IN	TXT	( "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw5KEemgXFN2G5" "FGet8VS9WCM9+BXpPY8MPnzATG6TDL/E8Yxvi1EFNJI1DRrbZKjBxO9wywkHdayeSMeB3vBWUtB8UG+C" "s8j5vJpT/v895VL62G/cHUJl+XPKdmGfS6waR89y2NLyYpIGEIEo4iHKI1TPIBrK9jvi8Nud88woq/Y5" "GaQeUOLBr0Drne2m71SagTix6w6Xkt+MRP4/gOdOZmANzRJmW6SW3Ropp44BgSmG/9XDksKym3vo54oq" "ldbh3ySriOG/Hle61MROL2w0N7Yff7MJVX9dtFXKGxry+1wgDPAhFK9/6iVj9TAbtv7x8+GYPUnoXud0" "4tvkeyjVQIDAQAB" )
+autoconfig.brightbelljanitors.com.	IN	A	161.97.158.218
+autodiscover.brightbelljanitors.com.	IN	A	161.97.158.218
+
