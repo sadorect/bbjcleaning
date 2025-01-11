@@ -95,7 +95,7 @@
 									<div class="header-logo">
 										<a href="{{ route('home')}}">
 											<div style="background-color: #106fe4; padding: 1px; display: inline-block;">
-												<img src="{{asset('frontend/img/logos/brightbell.png') }}" class="img-fluid" width="250" height="80" alt="" />
+												<img src="{{asset('frontend/img/logos/brightbell.png') }}" class="img-fluid" width="150" height="80" alt="" />
 										</div>
 										</a>
 									</div>

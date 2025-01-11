@@ -1,0 +1,144 @@
+
+/* Stats Counter Animation */
+.custom-counter {
+    background: rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.stats-section {
+  margin-top: -200px;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-counter:hover {
+    transform: translateY(-10px);
+}
+
+/* Process Steps */
+.process-steps {
+    position: relative;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: #0088cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0,136,204,0.3);
+}
+
+/* Testimonials Enhancement */
+.testimonial.testimonial-style-3 {
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.testimonial.testimonial-style-3:hover {
+    transform: translateY(-5px);
+}
+
+/* Hero Section Enhancements */
+.section-parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-parallax:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,136,204,0.9), rgba(0,136,204,0.6));
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero animations */
+.hero-title {
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* CTA Button Animations */
+.btn-modern {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-modern:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.2);
+    transition: width 0.3s;
+}
+
+.btn-modern:hover:after {
+    width: 100%;
+}
+
+.services-section {
+  margin-top: 100px;
+  position: relative;
+  z-index: 1;
+}
