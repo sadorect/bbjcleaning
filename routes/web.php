@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,13 @@ use App\Http\Controllers\ContactController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::prefix('admin')->middleware(['admin'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::resource('services', ServiceController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('contacts', ContactController::class);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,3 +48,8 @@ Route::middleware(['web'])->group(function () {
 Route::post('/contact/send', [ContactController::class, 'sendContact'])->name('contactMail');
 
 });
+
+// Admin Auth Routes
+Route::get('admin/login', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [App\Http\Controllers\Admin\AuthController::class, 'login']);
+Route::post('admin/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('admin.logout');

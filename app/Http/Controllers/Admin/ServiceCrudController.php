@@ -93,7 +93,7 @@ class ServiceCrudController extends CrudController
         ]);
 
         CRUD::field([   // Upload
-            'name'      => 'img',
+            'name'      => 'image',
             'label'     => 'Service Image',
             'type'      => 'upload',
             'withFiles' => true,

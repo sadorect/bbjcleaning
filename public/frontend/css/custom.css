@@ -142,3 +142,205 @@
   position: relative;
   z-index: 1;
 }
+
+/*About Page*/
+/* Timeline Styles */
+.timeline-box {
+  border-left: 3px solid #0088cc;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #0088cc;
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  border-radius: 50%;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-item {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.value-item:hover {
+  transform: translateY(-10px);
+}
+
+.value-item i {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Certification Carousel */
+.certification-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.certification-item img {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+
+.certification-item h5 {
+  color: #0088cc;
+  font-weight: bold;
+}
+
+
+/* Hero Section Enhancement */
+.page-header-modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header-modern:after {
+  content: '';
+  background: linear-gradient(135deg, #0088cc 0%, #0169a9 100%);
+  opacity: 0.85;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Company Story Section */
+.custom-text-size-1 {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.lead {
+  font-size: 1.4em;
+  color: #0088cc;
+  font-weight: 500;
+}
+
+/* Image Enhancements */
+.rounded {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.rounded:hover {
+  transform: scale(1.02);
+}
+
+/* Animation Utilities */
+.appear-animation {
+  opacity: 0;
+}
+
+.appear-animation.animated {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .values-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+  
+  .timeline-box {
+      margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-text-size-1 {
+      font-size: 1em;
+  }
+  
+  .lead {
+      font-size: 1.2em;
+  }
+}
+
+/*Services*/
+/* Service Cards */
+.service-icon {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .service-icon {
+  transform: translateY(-10px);
+}
+
+.hover-box-shadow-3:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Feature Boxes */
+.feature-box-style-2 {
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.feature-box-style-2:hover {
+  transform: translateY(-5px);
+}
+
+.feature-box-icon i {
+  font-size: 2.5em;
+}
+
+/* Quote Form */
+.contact-form .form-control {
+  border: 2px solid #eee;
+  height: 50px;
+  padding: 10px 15px;
+}
+
+.contact-form textarea.form-control {
+  height: auto;
+}
+
+.contact-form .form-control:focus {
+  border-color: #0088cc;
+  box-shadow: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .feature-box-style-2 {
+      margin-bottom: 20px;
+  }
+}
