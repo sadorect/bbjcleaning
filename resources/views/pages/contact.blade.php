@@ -75,46 +75,51 @@
           <h3 class="text-color-secondary font-weight-bold text-transform-none line-height-2 text-8 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Send Us a Message</h3>
         </div>
       </div>
+     @php
+     $services =  App\Models\Service::all();
+      @endphp
       <div class="row pb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400">
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
         <div class="col">
-          <form class="contact-form custom-form-style-1" action="{{route('contactMail')}}" method="POST">
+          <form class="contact-form custom-form-style-1" action="{{ route('contact.store') }}" method="POST">
             @csrf
-                            <div class="contact-form-success alert alert-success d-none mt-4">
-                                <strong>Success!</strong> Your message has been sent to us.
-                            </div>
-
-                            <div class="contact-form-error alert alert-danger d-none mt-4">
-                                <strong>Error!</strong> There was an error sending your message.
-                                <span class="mail-error-message text-1 d-block"></span>
-                            </div>
-
-                            <div class="row row-gutter-sm">
-                                <div class="form-group col-lg-6 mb-4">
-                                    <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required placeholder="Your Name">
-                                </div>
-                                <div class="form-group col-lg-6 mb-4">
-                                    <input type="text" value="" data-msg-required="Please enter your phone number." maxlength="100" class="form-control" name="phone" id="phone" required placeholder="Phone Number">
-                                </div>
-                            </div>
-                            <div class="row row-gutter-sm">
-                                <div class="form-group col-lg-6 mb-4">
-                                    <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required placeholder="Your Name">
-                                </div>
-                                <div class="form-group col-lg-6 mb-4">
-                                    <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required placeholder="Subject">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col mb-4">
-                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" required placeholder="Your Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col mb-0">
-                                    <button type="reset" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3" data-loading-text="Loading...">SEND MESSAGE</button>
-                                </div>
-                            </div>
-                        </form>
+            <div class="row row-gutter-sm">
+                <div class="form-group col-lg-6 mb-4">
+                    <input type="text" value="{{ old('name') }}" class="form-control" name="name" id="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group col-lg-6 mb-4">
+                    <input type="text" value="{{ old('phone') }}" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="row row-gutter-sm">
+                <div class="form-group col-lg-6 mb-4">
+                    <input type="email" value="{{ old('email') }}" class="form-control" name="email" id="email" required placeholder="Email Address">
+                </div>
+                <div class="form-group col-lg-6 mb-4">
+                    <select class="form-control" name="service" id="service" required>
+                        <option value="">Select Service</option>
+                        @foreach($services as $service)
+                            <option value="{{ $service->name }}">{{ $service->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col mb-4">
+                    <textarea class="form-control" name="message" id="message" rows="10" required placeholder="Your Message">{{ old('message') }}</textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col mb-0">
+                    <button type="submit" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3" style="cursor: pointer;">SEND MESSAGE</button>
+                </div>
+            </div>
+          </form>
+        
         </div>
       </div>
     </div>

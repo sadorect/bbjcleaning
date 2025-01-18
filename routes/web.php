@@ -18,11 +18,13 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::prefix('admin')->middleware(['admin'])->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
-    Route::resource('services', ServiceController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('contacts', ContactController::class);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::resource('services', ServiceController::class)->names('admin.services');
+    Route::resource('users', UserController::class)->names('admin.users');
+    Route::resource('contacts', ContactController::class)->names('admin.contacts');
 });
+Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
+
 
 Route::get('/', function () {
     return view('welcome');

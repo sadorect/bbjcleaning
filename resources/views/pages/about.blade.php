@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="{{ basset('frontend/img/demos/cleaning-services/about/values.jpg') }}" class="img-fluid rounded" alt="Our Values">
+            <img src="{{ asset('frontend/img/demos/cleaning-services/about/values.jpg') }}" class="img-fluid rounded" alt="Our Values">
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@
             <div class="owl-carousel owl-theme nav-outside nav-arrows-1" data-plugin-options="{'items': 4, 'loop': true, 'nav': true, 'dots': false}">
               <!-- Add certification logos here -->
               <div class="certification-item">
-                <img src="{{ basset('frontend/img/demos/cleaning-services/certifications/cert1.png') }}" alt="Certification 1">
+                <img src="{{ asset('frontend/img/demos/cleaning-services/certifications/cert1.png') }}" alt="Certification 1">
                 <h5>Green Cleaning Certified</h5>
               </div>
               <!-- Add more certification items -->

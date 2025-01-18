@@ -124,7 +124,7 @@ Theme Version:	10.1.0
 					$messageError.removeClass('d-none');
 					$messageSuccess.addClass('d-none');
 
-					if (($messageError.offset().top - 80) < $(window).scrollTop()) {
+					if ($messageError.length && ($messageError.offset().top - 80) < $(window).scrollTop()) {
 						$('html, body').animate({
 							scrollTop: $messageError.offset().top - 80
 						}, 300);
