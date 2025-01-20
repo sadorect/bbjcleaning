@@ -110,7 +110,7 @@
 													<li><a href="{{ route('home')}}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
 													<li><a href="{{ route('about')}}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a></li>
 													<li><a href="{{ route('services')}}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a></li>
-												
+													<li><a href="{{ route('careers.public')}}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Careers</a></li>
 													<li><a href="{{ route('contact')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a></li>
 												</ul>
 											</nav>
