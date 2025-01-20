@@ -24,6 +24,9 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::resource('services', ServiceController::class)->names('admin.services');
     Route::resource('users', UserController::class)->names('admin.users');
     Route::resource('contacts', ContactController::class)->names('admin.contacts');
+    Route::post('/admin/contacts/{contact}/reply', [ContactController::class, 'reply'])
+    ->name('admin.contacts.reply');
+    
 
     Route::get('/applications', [JobApplicationController::class, 'index'])
          ->name('admin.applications.index');

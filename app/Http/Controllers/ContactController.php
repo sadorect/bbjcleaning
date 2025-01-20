@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Mail\ContactMail;
+use App\Mail\ContactReply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Notifications\NewContactSubmission;
@@ -37,6 +38,18 @@ class ContactController extends Controller
         
         return redirect()->back()->with('success', 'Thank you for your message. We will contact you shortly.');
     }
+
+    public function reply(Request $request, Contact $contact)
+{
+    $validated = $request->validate([
+        'subject' => 'required|string|max:255',
+        'reply_message' => 'required|string'
+    ]);
+
+    Mail::to($contact->email)->send(new ContactReply($contact, $validated));
+
+    return redirect()->back()->with('success', 'Reply sent successfully');
+}
 
     public function destroy(Contact $contact)
     {
