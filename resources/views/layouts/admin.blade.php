@@ -17,27 +17,53 @@
             <div class="p-4">
                 <h1 class="text-white text-2xl font-bold">Brightbell Admin</h1>
             </div>
+            
             <nav class="mt-4">
                 @if(Route::has('admin.dashboard'))
                 <a href="{{ route('admin.dashboard') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
                 </a>
                 @endif
+
                 @if(Route::has('admin.services.index'))
                 <a href="{{ route('admin.services.index') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-broom mr-2"></i> Services
                 </a>
                 @endif
+
                 @if(Route::has('admin.users.index'))
                 <a href="{{ route('admin.users.index') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-users mr-2"></i> Users
                 </a>
                 @endif
+
                 @if(Route::has('admin.contacts.index'))
                 <a href="{{ route('admin.contacts.index') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-envelope mr-2"></i> Contacts
                 </a>
-                @endif            </nav>
+                @endif
+
+                <!-- New Recruitment Section -->
+                <div class="p-4 text-gray-400 text-sm">
+                    <span>RECRUITMENT</span>
+                </div>
+                
+                @if(Route::has('admin.applications.index'))
+                <a href="{{ route('admin.applications.index') }}" 
+                   class="block p-4 text-white hover:bg-blue-700 {{ request()->routeIs('admin.applications.*') ? 'bg-blue-700' : '' }}">
+                    <i class="fas fa-briefcase mr-2"></i> 
+                    Job Applications
+                    @php
+                        $pendingCount = \App\Models\JobApplication::where('status', 'pending')->count();
+                    @endphp
+                    @if($pendingCount > 0)
+                        <span class="float-right bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+                            {{ $pendingCount }}
+                        </span>
+                    @endif
+                </a>
+                @endif
+            </nav>
         </div>
 
         <!-- Main Content -->

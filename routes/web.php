@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\JobApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,13 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::resource('services', ServiceController::class)->names('admin.services');
     Route::resource('users', UserController::class)->names('admin.users');
     Route::resource('contacts', ContactController::class)->names('admin.contacts');
+
+    Route::get('/applications', [JobApplicationController::class, 'index'])
+         ->name('admin.applications.index');
+    Route::get('/applications/{application}', [JobApplicationController::class, 'show'])
+         ->name('admin.applications.show');
+    Route::patch('/applications/{application}/status', [JobApplicationController::class, 'updateStatus'])
+         ->name('admin.applications.update-status');
 });
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 
