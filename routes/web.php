@@ -31,6 +31,10 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
          ->name('admin.applications.show');
     Route::patch('/applications/{application}/status', [JobApplicationController::class, 'updateStatus'])
          ->name('admin.applications.update-status');
+    Route::get('/admin/applications/{application}/preview/{type}', 
+    [JobApplicationController::class, 'previewDocument'])
+    ->name('admin.applications.preview');
+
 });
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 

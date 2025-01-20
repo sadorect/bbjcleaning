@@ -43,21 +43,61 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-12">
-                            <strong>Documents:</strong><br>
-                            <a href="{{ Storage::url($application->resume_path) }}" 
-                               class="btn btn-sm btn-info" target="_blank">
-                                View Resume
-                            </a>
-                            @if($application->cover_letter_path)
-                            <a href="{{ Storage::url($application->cover_letter_path) }}" 
-                               class="btn btn-sm btn-info" target="_blank">
-                                View Cover Letter
-                            </a>
-                            @endif
-                        </div>
-                    </div>
+                    <!-- In the documents section -->
+<div class="row mb-3">
+  <div class="col-12">
+      <strong>Documents:</strong><br>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#resumeModal">
+          <i class="fas fa-eye"></i> View Resume
+      </button>
+      <a href="{{ Storage::url($application->resume_path) }}" class="btn btn-info btn-sm" download>
+          <i class="fas fa-download"></i> Download Resume
+      </a>
+      @if($application->cover_letter_path)
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#coverLetterModal">
+              <i class="fas fa-eye"></i> View Cover Letter
+          </button>
+          <a href="{{ Storage::url($application->cover_letter_path) }}" class="btn btn-info btn-sm" download>
+              <i class="fas fa-download"></i> Download Cover Letter
+          </a>
+      @endif
+  </div>
+</div>
+
+<!-- Add Modals at the bottom of the page -->
+<div class="modal fade" id="resumeModal" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Resume Preview</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <x-document-viewer :path="$application->resume_path" type="resume" />
+          </div>
+      </div>
+  </div>
+</div>
+
+
+@if($application->cover_letter_path)
+<div class="modal fade" id="coverLetterModal" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Cover Letter Preview</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ Storage::url($application->cover_letter_path) }}" 
+                      style="width: 100%; height: 80vh;" frameborder="0"></iframe>
+          </div>
+      </div>
+  </div>
+</div>
+@endif
+
+
                 </div>
             </div>
         </div>

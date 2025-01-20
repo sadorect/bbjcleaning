@@ -2,11 +2,12 @@
 namespace App\Http\Controllers\Admin;
 
 
+use Illuminate\Http\Request;
 use App\Models\JobApplication;
 use App\Http\Controllers\Controller;
-use App\Mail\ApplicationStatusUpdate;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ApplicationStatusUpdate;
+use Illuminate\Support\Facades\Storage;
 
 class JobApplicationController extends Controller
 {
@@ -38,4 +39,21 @@ class JobApplicationController extends Controller
 
         return redirect()->back()->with('success', 'Application status updated successfully');
     }
-}
+
+    public function previewDocument(JobApplication $application, $type)
+    {
+        $path = $type === 'resume' ? $application->resume_path : $application->cover_letter_path;
+        
+        if (!$path) {
+            abort(404);
+        }
+    
+        $file = Storage::get($path);
+        $mimeType = Storage::mimeType($path);
+    
+        return response($file)
+            ->header('Content-Type', $mimeType)
+            ->header('Content-Disposition', 'inline');
+    }
+    
+  }
