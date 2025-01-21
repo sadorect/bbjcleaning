@@ -82,7 +82,7 @@
 								</div>
 								<div class="header-column justify-content-end">
 									<div class="header-row">
-										<a href="{{route('contact')}}" class="custom-header-top-btn-style-1 btn btn-secondary font-weight-bold px-4 px-sm-5 py-3">BOOK NOW</a>
+										<a href="{{route('booking.public')}}" class="custom-header-top-btn-style-1 btn btn-secondary font-weight-bold px-4 px-sm-5 py-3">BOOK NOW</a>
 									</div>
 								</div>
 							</div>
@@ -112,6 +112,7 @@
 													<li><a href="{{ route('services')}}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a></li>
 													<li><a href="{{ route('careers.public')}}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Careers</a></li>
 													<li><a href="{{ route('contact')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a></li>
+													<li><a href="{{ route('booking.public')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Booking</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -168,7 +169,7 @@
             <a href="tel:+12046887777" class="text-uppercase text-color-light text-color-hover-secondary text-decoration-none text-5 font-weight-bold pb-0">+1204 688 7777</a>
           </div>
         </div>
-        <a href="{{route('contact')}}" class="btn btn-primary font-weight-bold px-5 py-3 mb-2">BOOK NOW</a>
+        <a href="{{route('booking.public')}}" class="btn btn-primary font-weight-bold px-5 py-3 mb-2">BOOK NOW</a>
       </div>
       <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
         <h4 class="font-weight-bold ls-0">Our Services</h4>

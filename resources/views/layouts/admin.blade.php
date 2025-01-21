@@ -43,6 +43,23 @@
                 </a>
                 @endif
 
+                <!-- Add this inside the nav section -->
+@if(Route::has('admin.bookings.index'))
+<a href="{{ route('admin.bookings.index') }}" 
+   class="block p-4 text-white hover:bg-blue-700 {{ request()->routeIs('admin.bookings.*') ? 'bg-blue-700' : '' }}">
+    <i class="fas fa-calendar-check mr-2"></i> 
+    Bookings
+    @php
+        $pendingBookings = \App\Models\Booking::where('status', 'pending')->count();
+    @endphp
+    @if($pendingBookings > 0)
+        <span class="float-right bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+            {{ $pendingBookings }}
+        </span>
+    @endif
+</a>
+@endif
+
                 <!-- New Recruitment Section -->
                 <div class="p-4 text-gray-400 text-sm">
                     <span>RECRUITMENT</span>

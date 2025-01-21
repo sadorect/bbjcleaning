@@ -113,6 +113,8 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'admin_to' => env('MAIL_ADMIN_ADDRESS', 'admin@brightbelljanitors.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

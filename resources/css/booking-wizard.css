@@ -1,0 +1,33 @@
+.step-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+.step-content.active {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
+.progress-wrapper {
+    position: relative;
+    margin-bottom: 3rem;
+}
+.progress {
+    height: 0.5rem;
+}
+.progress-labels {
+    margin-top: 1rem;
+    position: relative;
+    width: 100%;
+}
+.step {
+    position: relative;
+    color: #6c757d;
+    transition: color 0.3s ease;
+}
+.step.active {
+    color: #007bff;
+    font-weight: 600;
+}

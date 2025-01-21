@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\JobApplicationController;
+use App\Http\Controllers\Admin\BookingManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,8 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::resource('contacts', ContactController::class)->names('admin.contacts');
     Route::post('/admin/contacts/{contact}/reply', [ContactController::class, 'reply'])
     ->name('admin.contacts.reply');
-    
 
+// Job Applications
     Route::get('/applications', [JobApplicationController::class, 'index'])
          ->name('admin.applications.index');
     Route::get('/applications/{application}', [JobApplicationController::class, 'show'])
@@ -37,6 +39,11 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::get('/admin/applications/{application}/preview/{type}', 
     [JobApplicationController::class, 'previewDocument'])
     ->name('admin.applications.preview');
+
+    // Booking
+    Route::get('/bookings', [BookingManagementController::class, 'index'])->name('admin.bookings.index');
+    Route::get('/bookings/{booking}', [BookingManagementController::class, 'show'])->name('admin.bookings.show');
+    Route::patch('/bookings/{booking}/status', [BookingManagementController::class, 'updateStatus'])->name('admin.bookings.update-status');
 
 });
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
@@ -61,6 +68,8 @@ Route::get('/contact', function () {
     return view('pages/contact');
 })->name('contact');
 
+
+
 Route::middleware(['web'])->group(function () {
 
 Route::post('/contact/send', [ContactController::class, 'sendContact'])->name('contactMail');
@@ -72,6 +81,10 @@ Route::post('/careers/store', [CareerController::class, 'store'])->name('careers
 Route::get('/careers/track', [CareerController::class, 'showTrackingForm'])->name('careers.track');
 Route::post('/careers/track', [CareerController::class, 'trackApplication'])->name('careers.track.status');
 
+// Booking Routes
+Route::get('/booking', [BookingController::class, 'public'])->name('booking.public');
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::get('/booking/track/{number}', [BookingController::class, 'track'])->name('booking.track');
 
 // Admin Auth Routes
 Route::get('admin/login', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('admin.login');
