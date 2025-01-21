@@ -31,6 +31,12 @@
                 </a>
                 @endif
 
+                @if(Route::has('admin.features.index'))
+                <a href="{{ route('admin.features.index') }}" class="block p-4 text-white hover:bg-blue-700">
+                    <i class="fas fa-broom mr-2"></i> Features
+                </a>
+                @endif
+
                 @if(Route::has('admin.users.index'))
                 <a href="{{ route('admin.users.index') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-users mr-2"></i> Users

@@ -86,6 +86,7 @@
         </div>
       </div>
     </section>
+    @include('partials.why-choose-us')
 
     <!-- Process Section -->
     <section class="section section-with-shape-divider bg-tertiary border-0 m-0">

@@ -5,6 +5,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\JobApplicationController;
@@ -45,6 +46,9 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::get('/bookings/{booking}', [BookingManagementController::class, 'show'])->name('admin.bookings.show');
     Route::patch('/bookings/{booking}/status', [BookingManagementController::class, 'updateStatus'])->name('admin.bookings.update-status');
 
+
+    //Features
+    Route::resource('features', FeatureController::class)->names('admin.features');
 });
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 
