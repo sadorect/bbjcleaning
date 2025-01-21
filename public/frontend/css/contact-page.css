@@ -1,0 +1,22 @@
+/*Contact PAge only*/
+footer {
+  background-color: #063e75;
+}
+footer h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+footer .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+footer .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+.social-icons a:hover {
+  opacity: 0.8;
+}
+footer a:hover {
+  color: #0d6efd !important;
+}

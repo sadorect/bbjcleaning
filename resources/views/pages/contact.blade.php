@@ -62,7 +62,7 @@
                       </div>
                   @endif
 
-                  <form action="{{ route('contact.store') }}" method="POST">
+                  <form id="contactForm" action="{{ route('contact.store') }}" method="POST" class="direct-submit">
                       @csrf
                       <div class="row">
                           <div class="col-md-6 mb-3">
@@ -132,5 +132,6 @@
   <div class="map-section mt-5">
       <div id="map" style="height: 400px;"></div>
   </div>
+  @include('partials.contact-footer')
 
 </x-frontend>

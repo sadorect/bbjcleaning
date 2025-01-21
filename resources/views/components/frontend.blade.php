@@ -56,7 +56,9 @@
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
-
+		@if(request()->is('contact'))
+		<link rel="stylesheet" href="{{ asset('frontend/css/contact-page.css') }}">
+		@endif	
 	</head>
 	<body>
 
@@ -236,7 +238,9 @@
 </div>
 
 <!-- Vendor -->
+@if(!Request::is('contact'))
 <script src="{{ asset('frontend/vendor/plugins/js/plugins.min.js')}}"></script>
+@endif
 
 <!-- Theme Base, Components and Settings -->
 <script src="{{ asset('frontend/js/theme.js')}}"></script>
