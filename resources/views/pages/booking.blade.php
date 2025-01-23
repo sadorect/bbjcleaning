@@ -1,7 +1,18 @@
 <x-frontend>
   @vite(['resources/js/booking-wizard.js'])
   @vite(['resources/css/booking-wizard.css'])
+  <section class="page-header page-header-modern bg-tertiary border-0 my-0">
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-12 font-weight-bold">Booking</h1>
+                <span class="sub-title font-weight-bold">Professional cleaning services tailored to your needs</span>
+            </div>
+        </div>
+    </div>
+</section>
   <div class="container py-5">
+      <h1 class="text-center mb-4">Book Your Cleaning Service</h1>
       <div class="booking-wizard">
           <!-- Progress Bar -->
           <div class="progress-wrapper mb-5">

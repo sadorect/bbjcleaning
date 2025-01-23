@@ -45,7 +45,7 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::get('/bookings', [BookingManagementController::class, 'index'])->name('admin.bookings.index');
     Route::get('/bookings/{booking}', [BookingManagementController::class, 'show'])->name('admin.bookings.show');
     Route::patch('/bookings/{booking}/status', [BookingManagementController::class, 'updateStatus'])->name('admin.bookings.update-status');
-
+    Route::delete('/bookings/{booking}', [BookingManagementController::class, 'destroy'])->name('admin.bookings.destroy');
 
     //Features
     Route::resource('features', FeatureController::class)->names('admin.features');

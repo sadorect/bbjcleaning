@@ -1,4 +1,15 @@
 <x-frontend>
+
+    <section class="page-header page-header-modern bg-tertiary border-0 my-0">
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-12 font-weight-bold">Careers</h1>
+                    <span class="sub-title font-weight-bold">Join our team of dedicated professionals and grow your career with us</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container py-5">
       <!-- Add this near the top of the page -->
           <div class="text-center mb-4">

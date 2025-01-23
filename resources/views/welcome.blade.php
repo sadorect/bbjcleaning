@@ -19,37 +19,54 @@
       </div>
     </section>
 
-    <!-- Stats Counter Section -->
-    <section class="section bg-primary border-0 m-0">
-      <div class="container">
-        <div class="row align-items-end">
-          <div class="col-lg-4 text-center mb-5 mb-lg-0">
-            <div class="appear-animation" data-appear-animation="fadeInLeftShorter">
-              <div class="custom-counter">
-                <span class="counter text-color-light font-weight-bold text-12">20+</span>
-                <label class="text-color-light font-weight-light text-4">Years Experience</label>
+    <!-- Features Highlight Section -->
+<section class="section bg-primary border-0 m-0">
+  <div class="container">
+      <div class="row align-items-end pb-3 mb-5">
+          <div class="col-lg-7 col-xl-8 mb-4 mb-lg-0">
+              <div class="d-flex align-items-center mb-2">
+                  <span class="custom-line appear-animation" data-appear-animation="customLineAnimation"></span>
+                  <h2 class="text-color-light font-weight-bold text-6 mb-0 appear-animation" data-appear-animation="fadeInUpShorter">Our Guaranty</h2>
               </div>
-            </div>
           </div>
-          <div class="col-lg-4 text-center mb-5 mb-lg-0">
-            <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-              <div class="custom-counter">
-                <span class="counter text-color-light font-weight-bold text-12">15,000+</span>
-                <label class="text-color-light font-weight-light text-4">Projects Completed</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 text-center">
-            <div class="appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
-              <div class="custom-counter">
-                <span class="counter text-color-light font-weight-bold text-12">98%</span>
-                <label class="text-color-light font-weight-light text-4">Client Satisfaction</label>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+      <div class="row align-items-center">
+          <!-- Professional Cleaners -->
+          <div class="col-lg-4 text-center mb-5 mb-lg-0">
+              <div class="appear-animation" data-appear-animation="fadeInLeftShorter">
+                  <div class="feature-box">
+                      <i class="fas fa-user-tie text-color-light fa-3x mb-4"></i>
+                      <h3 class="text-color-light font-weight-bold text-4 mb-2">Professional Cleaners</h3>
+                      <p class="text-color-light opacity-7">Our team of experienced, professional cleaners ensures exceptional service and spotless results every time. Trust us to handle all your cleaning needs with precision and care.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Same Day Availability -->
+          <div class="col-lg-4 text-center mb-5 mb-lg-0">
+              <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                  <div class="feature-box">
+                      <i class="fas fa-clock text-color-light fa-3x mb-4"></i>
+                      <h3 class="text-color-light font-weight-bold text-4 mb-2">Same Day Availability</h3>
+                      <p class="text-color-light opacity-7">In need of urgent cleaning? We've got you covered with our same-day availability. Schedule a cleaning today and enjoy a pristine space by the end of the day.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Affordable Price -->
+          <div class="col-lg-4 text-center">
+              <div class="appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+                  <div class="feature-box">
+                      <i class="fas fa-tags text-color-light fa-3x mb-4"></i>
+                      <h3 class="text-color-light font-weight-bold text-4 mb-2">Affordable Price</h3>
+                      <p class="text-color-light opacity-7">Quality cleaning services don't have to break the bank. We offer competitive, affordable pricing to fit any budget, ensuring everyone can enjoy a clean and healthy environment.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
     <!-- Services Section -->
     <section class="section border-0 py-4 m-0">
       <div class="container">

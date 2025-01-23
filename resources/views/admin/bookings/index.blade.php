@@ -57,6 +57,13 @@
                                    class="btn btn-sm btn-primary">
                                     View Details
                                 </a>
+                                <form action="{{ route('admin.bookings.destroy', $booking) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this booking?')">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
