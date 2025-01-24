@@ -36,10 +36,10 @@
                       <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
                       <div class="info-content">
                           <h5>Visit Us</h5>
-                          <p>123 Cleaning Street<br>Winnipeg, MB R3T 2N2</p>
+                          <p>511-44 The Promenade street<br>Winnipeg, MB R3B 3H9 Canada</p>
                       </div>
                   </div>
-
+                  
                   <div class="info-item">
                       <i class="fas fa-clock fa-lg text-primary"></i>
                       <div class="info-content">
@@ -128,9 +128,46 @@
   </div>
 
   <!-- Google Map -->
-  <div class="map-section mt-5">
-      <div id="map" style="height: 400px;"></div>
-  </div>
+<div class="map-section mt-5">
+    <div id="map" style="height: 400px;"></div>
+</div>
+@php
+    $latitude = 49.89295639999999;
+    $longitude = -97.1478479;
+@endphp
+
+<script>
+    function initMap() {
+        const location = { 
+            lat: {{ config('services.google.map_lat', '49.89295639999999') }}, 
+            lng: {{ config('services.google.map_lng', '-97.1478479') }}
+        };
+        
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location,
+            styles: [
+                {
+                    "featureType": "poi",
+                    "elementType": "labels",
+                    "stylers": [{ "visibility": "off" }]
+                }
+            ]
+        });
+        
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'Brightbell Cleaning Services'
+        });
+    }
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_api_key') }}&callback=initMap">
+</script>
+  
+  
   @include('partials.contact-footer')
 
 </x-frontend>

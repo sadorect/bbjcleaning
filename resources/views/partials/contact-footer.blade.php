@@ -5,12 +5,14 @@
             <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
                 <h4 class="fw-bold mb-3">Our Address</h4>
                 <ul class="list-unstyled">
-                    <li class="mb-1">12345 Brightbell Blvd.</li>
-                    <li class="mb-1">Suite 1500</li>
-                    <li>Los Angeles, California 90000</li>
+                    <li class="mb-1">511-44 The Promenade street</li>
+                    <li class="mb-1">Winnipeg</li>
+                    <li> MB R3B 3H9 Canada</li>
                 </ul>
             </div>
-
+            
+            
+           
             <!-- Contact Column -->
             <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
                 <h4 class="fw-bold mb-3">Our Contacts</h4>
