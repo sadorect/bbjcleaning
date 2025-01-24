@@ -96,7 +96,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="{{ route('home')}}">
-											<div style="background-color: #106fe4; padding: 1px; display: inline-block;">
+											<div style=" padding: 1px; display: inline-block;">
 												<img src="{{asset('frontend/img/logos/brightbell.png') }}" class="img-fluid" width="150" height="80" alt="" />
 										</div>
 										</a>
@@ -151,13 +151,13 @@
         <h4 class="font-weight-bold ls-0">Our Address</h4>
         <ul class="list list-unstyled mb-0">
           <li class="mb-1">
-            12345  Brightbell Blvd.
+            511-44 The Promenade street 
           </li>
           <li class="mb-1">
-            Suite 1500
+            Winnipeg
           </li>
           <li class="mb-0">
-            Los Angeles, California 90000
+            MB R3B 3H9 Canada
           </li>
         </ul>
       </div>
@@ -187,7 +187,7 @@
             <a href="{{route('services')}}">Office Cleaning</a>
           </li>
         </ul>
-        <a href="demo-cleaning-services-services.html" class="btn btn-link font-weight-bold text-decoration-none ps-0">VIEW MORE</a>
+        <a href="{{route('services')}}" class="btn btn-link font-weight-bold text-decoration-none ps-0">VIEW MORE</a>
       </div>
       <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
         <h4 class="font-weight-bold ls-0">About</h4>

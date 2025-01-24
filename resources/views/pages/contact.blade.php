@@ -3,13 +3,12 @@
       <div class="container my-3">
           <div class="row">
               <div class="col-md-12 text-center">
-                  <h1 class="text-10 font-weight-bold">Contact Us</h1>
-                  <span class="sub-title">We're here to help with your cleaning needs</span>
+                  <h1 class="text-10 font-weight-bold text-white">Contact Us</h1>
+                  <span class="sub-title text-white">We're here to help with your cleaning needs</span>
               </div>
           </div>
       </div>
   </section>
-
   <div class="container py-5">
       <div class="row">
           <!-- Contact Information -->

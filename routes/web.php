@@ -5,6 +5,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -49,6 +50,9 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     //Features
     Route::resource('features', FeatureController::class)->names('admin.features');
+
+    //Sliders
+    Route::resource('sliders', SliderController::class)->names('admin.sliders');
 });
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 

@@ -25,9 +25,9 @@
             <textarea 
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 id="description" 
-                name="description" 
+                name="shortDescr" 
                 rows="4" 
-                required>{{ old('description') }}</textarea>
+                required>{{ old('shortDescr') }}</textarea>
         </div>
 
         <div class="mb-4">

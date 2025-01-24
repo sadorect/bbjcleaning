@@ -37,6 +37,12 @@
                 </a>
                 @endif
 
+                @if(Route::has('admin.sliders.index'))
+                <a href="{{ route('admin.sliders.index') }}" class="block p-4 text-white hover:bg-blue-700">
+                    <i class="fas fa-broom mr-2"></i> Slider
+                </a>
+                @endif
+
                 @if(Route::has('admin.users.index'))
                 <a href="{{ route('admin.users.index') }}" class="block p-4 text-white hover:bg-blue-700">
                     <i class="fas fa-users mr-2"></i> Users

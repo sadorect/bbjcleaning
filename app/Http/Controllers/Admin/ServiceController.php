@@ -23,7 +23,7 @@ class ServiceController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'description' => 'required',
+            'shortDescr' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
@@ -45,7 +45,7 @@ class ServiceController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'description' => 'required',
+            'shortDescr' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 

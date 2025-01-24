@@ -29,7 +29,17 @@
 
   <div role="main" class="main">
     <!-- Enhanced Hero Section -->
-    <section class="page-header page-header-modern page-header-lg overlay overlay-show overlay-op-9 bg-primary border-0 m-0" style="background-image: url({{ asset('frontend/img/demos/cleaning-services/services/services-header.jpg') }});">
+    <section class="page-header page-header-modern bg-tertiary border-0 my-0">
+      <div class="container my-3">
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <h1 class="font-weight-bold text-light text-10">Professional Cleaning Services</h1>
+                  <p class="text-light opacity-7 text-4">Tailored solutions for homes and businesses</p>
+              </div>
+          </div>
+      </div>
+  </section>
+    <!--section class="page-header page-header-modern page-header-lg overlay overlay-show overlay-op-9 bg-primary border-0 m-0">
       <div class="container my-3">
         <div class="row">
           <div class="col-md-12 align-self-center p-static order-2 text-center">
@@ -38,7 +48,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section-->
 @php
 $services = App\Models\Service::all();
 @endphp
@@ -52,10 +62,10 @@ $services = App\Models\Service::all();
             <div class="card border-0 bg-white h-100 box-shadow-1 hover-box-shadow-3 transition-all">
               <div class="card-body p-5">
                 <div class="service-icon mb-4">
-                  <img src="{{ asset('frontend/img/demos/cleaning-services/icons/' . $service->icon) }}" alt="{{ $service->name }}" class="img-fluid" width="60">
+                  <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid" style="width: auto; height: auto; object-fit: contain;">
                 </div>
                 <h4 class="font-weight-bold text-5 mb-3">{{ $service->name }}</h4>
-                <p class="mb-4">{{ $service->description }}</p>
+                <p class="mb-4">{{ $service->shortDescr }}</p>
                 <ul class="list list-icons list-icons-style-2 list-primary mb-4">
                   @if($service->features)
                     @foreach(json_decode($service->features, true) ?? [] as $feature)
@@ -66,8 +76,7 @@ $services = App\Models\Service::all();
                 <a href="{{ route('contact') }}?service={{ $service->id }}" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3">
                   BOOK NOW
                 </a>
-              </div>
-            </div>
+              </div>            </div>
           </div>
           @endforeach
         </div>

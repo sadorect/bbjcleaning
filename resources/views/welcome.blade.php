@@ -5,21 +5,51 @@
     <video class="hero-background-video" autoplay muted loop>
       <source src="{{ asset('frontend/videos/cleaning-hero.mp4') }}" type="video/mp4">
     </video>
-  
-    <section class="section section-with-shape-divider section-parallax bg-tertiary border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '110%', 'fadeIn': true}" data-image-src="img/demos/cleaning-services/backgrounds/background-1.jpg">
-      <div class="container position-relative z-index-1 pb-5 my-5">
-        <div class="row justify-content-center pb-5 mb-5">
-          <div class="col-md-10 col-lg-8 text-center">
-            <h1 class="text-color-light font-weight-bold text-10">Professional Cleaning Excellence in Ottawa</h1>
-            <h2 class="text-color-light font-weight-medium line-height-4 text-4 mb-3">Where Cleanliness Meets Perfection</h2>
-            <p class="custom-font-secondary text-4 mb-4 text-color-light opacity-7">Transform your space with our premium cleaning services. Trusted by 1000+ clients.</p>
-            <a href="#get-quote" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">GET FREE QUOTE</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Features Highlight Section -->
+    <section class="section section-with-shape-divider section-parallax bg-tertiary border-0 m-0 slide-position-relative">
+      <div class="owl-carousel owl-theme nav-inside nav-style-1 nav-light" data-plugin-options="{'items': 1, 'margin': 0, 'loop': true, 'nav': true, 'dots': false, 'autoplay': true, 'autoplayTimeout': 4000,'animateOut': 'fadeOut',
+             'autoHeight': true}">
+          <!-- Slide 1 -->
+          @forelse(App\Models\Slider::where('active', true)->orderBy('order')->get() as $slider) 
+          <div class="slider-item slide-position-relative">
+              <div class="slide-background-image-wrapper appear-animation" data-appear-animation="fadeIn" data-appear-animation-duration="1s">
+                  <img src="{{ Storage::url($slider->image) ?? asset('frontend/img/slider-1.webp') }}" class="slide-image" alt="{{ $slider->title ?? 'Welcome to Our Cleaning Service' }}">
+                  <div class="overlay-dark"></div>
+              </div>
+              <div class="container slide-position-relative z-index-1 h-100 d-flex align-items-center">
+                  <div class="row justify-content-center w-100">
+                      <div class="col-md-10 col-lg-8 text-center">
+                          <h1 class="text-color-light font-weight-bold text-10 appear-animation" data-appear-animation="fadeInDown" data-appear-animation-delay="500" style="z-index: 2; position: relative;">{{ $slider->title ?? 'Professional Cleaning Services' }}</h1>
+                          <h2 class="text-color-light font-weight-medium line-height-4 text-4 mb-3 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="800" style="z-index: 2; position: relative;">{{ $slider->subtitle ?? 'Your Trusted Cleaning Partner' }}</h2>
+                          <p class="custom-font-secondary text-4 mb-4 text-color-light opacity-7 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="1100">{{ $slider->description ?? 'We provide top-quality cleaning services for homes and businesses.' }}</p>
+                          <a href="{{ $slider->button_link ?? '/contact' }}" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="1400">{{ $slider->button_text ?? 'Get Started' }}</a>
+                      </div>
+                  </div> 
+               </div>
+          </div>
+          @empty
+          <div class="slide-position-relative">
+              <div class="slide-background-image-wrapper appear-animation" data-appear-animation="fadeIn" data-appear-animation-duration="1s">
+                  <img src="{{ asset('frontend/img/slider-1.webp') }}" class="slide-image mt-0" alt="Welcome to Our Service">
+                  <div class="overlay-dark"></div>
+              </div>
+              <div class="container slide-position-relative z-index-1 h-100 d-flex align-items-center">
+                  <div class="row justify-content-center w-100">
+                      <div class="col-md-10 col-lg-8 text-center">
+                          <h1 class="text-color-light font-weight-bold text-10 appear-animation" data-appear-animation="fadeInDown" data-appear-animation-delay="500" style="z-index: 2; position: relative;">Welcome to Our Cleaning Service</h1>
+                          <h2 class="text-color-light font-weight-medium line-height-4 text-4 mb-3 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="800" style="z-index: 2; position: relative;">Professional Cleaning Solutions</h2>
+                          <p class="custom-font-secondary text-4 mb-4 text-color-light opacity-7 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="1100">Experience the difference with our expert cleaning services.</p>
+                          <a href="/contact" class="btn btn-primary btn-modern font-weight-bold text-3 px-5 py-3 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="1400">Contact Us</a>
+                      </div>
+                  </div> 
+               </div>
+          </div>
+          @endforelse          
+      </div>
+ 
+  </section>   
+  
+  <!-- Features Highlight Section -->
 <section class="section bg-primary border-0 m-0">
   <div class="container">
       <div class="row align-items-end pb-3 mb-5">
