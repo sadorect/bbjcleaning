@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ResetPasswordController;
+use App\Http\Controllers\Admin\ForgotPasswordController;
 use App\Http\Controllers\Admin\JobApplicationController;
 use App\Http\Controllers\Admin\BookingManagementController;
 
@@ -53,9 +55,23 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     //Sliders
     Route::resource('sliders', SliderController::class)->names('admin.sliders');
-});
-Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 
+   
+});
+
+ // Password Reset Routes
+ Route::prefix('admin')->group(function () {
+    Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])
+        ->name('password.request');
+    Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])
+        ->name('password.email');
+    Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])
+        ->name('password.reset');
+    Route::post('password/reset', [ResetPasswordController::class, 'reset'])
+        ->name('password.update');
+
+    });
+    Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/', function () {
     return view('welcome');
