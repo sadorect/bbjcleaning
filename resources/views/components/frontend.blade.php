@@ -80,6 +80,8 @@
 												<span class="d-flex align-items-center ws-nowrap text-color-secondary font-weight-medium text-3"><i class="icon-clock icons text-3 top-3 left-1 me-2 text-color-secondary font-weight-bold"></i> Mon - Sun 24/7</span>
 											</li>
 										</ul>
+										<!-- Language Switcher -->
+										
 									</div>
 								</div>
 								<div class="header-column justify-content-end">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\FeatureController;
@@ -72,6 +73,7 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     });
     Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.store');
+    Route::get('language/{lang}', [LanguageController::class, 'switchLang'])->name('language.switch');
 
 Route::get('/', function () {
     return view('welcome');

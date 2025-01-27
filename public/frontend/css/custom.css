@@ -380,4 +380,16 @@
       margin-bottom: 20px;
   }
 
+  /*Language switcher*/
+  .flag-icon {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+}
 }

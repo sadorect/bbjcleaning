@@ -57,25 +57,28 @@
               </div>
 
               <!-- Step 2: Service Details -->
+              @php
+            $services = \App\Models\Service::all();
+              @endphp
               <div class="step-content" id="step2">
                   <h3>Service Details</h3>
                   <div class="mb-3">
                       <label>Service Type *</label>
                       <select name="service_type" class="form-control" required>
                           <option value="">Select Service</option>
-                          <option value="residential">Residential Cleaning</option>
-                          <option value="commercial">Commercial Cleaning</option>
-                          <option value="deep">Deep Cleaning</option>
-                          <option value="move">Move In/Out Cleaning</option>
-                      </select>
+                          @foreach($services as $service)
+                              <option value="{{ $service->name }}">{{ $service->name }}</option>
+                          @endforeach                      </select>
                   </div>
                   <div class="mb-3">
                       <label>Service Frequency</label>
                       <select name="frequency" class="form-control">
-                          <option value="one-time">One Time</option>
+                          <option value="daily">Daily</option>
                           <option value="weekly">Weekly</option>
                           <option value="bi-weekly">Bi-Weekly</option>
                           <option value="monthly">Monthly</option>
+                          <option value="night">Night - might attract additional charges</option>
+                          <option value="weekend">Weekend - might attract additional charges</option>
                       </select>
                   </div>
                   <button type="button" class="btn btn-secondary prev-step">Back</button>
