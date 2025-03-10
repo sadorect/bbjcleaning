@@ -226,15 +226,20 @@
         </div>
       </div>
       <div class="row py-4 mt-2">
-        <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
+        <div class="col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
           <a href="/">
             <img alt="BBJ" width="150" height="70" src="{{asset('frontend/img/logos/brightbell.png') }}" >
           </a>
         </div>
-        <div class="col-lg-6 text-center text-lg-end">
+        
+        <div class="col-lg-4 text-center text-lg-end">
           <p class="text-3 mb-0">Brightbell Janitors. © {{ date('Y')}}. All Rights Reserved</p>
         </div>
-      </div>
+
+        <div class="col-lg-4 text-lg-end mb-3 mb-lg-0">
+          <img alt="CoC" width="220" height="70" src="{{asset('frontend/img/chamber_of_commerce.jpeg') }}" >
+        </div>
+      </div>			
     </div>
   </div>
 </footer>
