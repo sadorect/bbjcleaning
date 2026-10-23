@@ -11,6 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::getConnection()->getDriverName() === 'sqlite') {
+            // SQLite cannot add a NOT NULL foreign key column to an existing table; tests only need the column.
+            Schema::table('bookings', function (Blueprint $table) {
+                $table->dropColumn('service_type');
+            });
+            Schema::table('bookings', function (Blueprint $table) {
+                $table->unsignedBigInteger('service_type')->nullable();
+            });
+
+            return;
+        }
+
         Schema::table('bookings', function (Blueprint $table) {
             // First modify the existing column to match our needs
             $table->dropColumn('service_type');
