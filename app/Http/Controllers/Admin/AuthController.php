@@ -21,8 +21,17 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->role !== 'admin') {
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+
+                return back()->withErrors(['email' => 'This account does not have admin access.']);
+            }
+
             $request->session()->regenerate();
-            return redirect()->route('admin.dashboard');        }
+            return redirect()->route('admin.dashboard');
+        }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

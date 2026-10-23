@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('services', ServiceController::class)->names('admin.services');
     Route::resource('users', UserController::class)->names('admin.users');
-    Route::resource('contacts', ContactController::class)->names('admin.contacts');
+    Route::resource('contacts', ContactController::class)->only(['index', 'show', 'destroy'])->names('admin.contacts');
     Route::post('/admin/contacts/{contact}/reply', [ContactController::class, 'reply'])
     ->name('admin.contacts.reply');
 

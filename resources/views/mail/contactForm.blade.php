@@ -328,11 +328,11 @@
 <div class="bee-block bee-block-1 bee-paragraph">
 <p><strong>Hello Sir </strong><br/><strong>Someone tried to reach out from the web. Pleae find the contact details below. </strong></p>
 
- <h4> Name : {{ $message['name'] }}</h4>
- <h4> Phone : {{ $message['phone'] }}</h4>
- <h4> Email: <a href="mailto:{{ $message['email'] }}?subject='{{ $message["email"] }}'">{{ $message['email'] }}</a></h4>
- <h4> Subject : {{ $message['subject'] }}</h4>
- <h4> Message : {{ $message['message'] }}</h4>
+ <h4> Name : {{ $data['name'] }}</h4>
+ <h4> Phone : {{ ($data['phone'] ?? '') }}</h4>
+ <h4> Email: <a href="mailto:{{ $data['email'] }}?subject='{{ $data['email'] }}'">{{ $data['email'] }}</a></h4>
+ <h4> Subject : {{ ($data['subject'] ?? '') }}</h4>
+ <h4> Message : {{ $data['message'] }}</h4>
 
 
 

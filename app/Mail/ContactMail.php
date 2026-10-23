@@ -36,11 +36,10 @@ class ContactMail extends Mailable
      */
     public function content(): Content
     {
-        $message = $this->data;
+        // Not called "message": Laravel reserves $message in email views for its own Message object.
         return new Content(
-            view: 'view.name',
             view: 'mail.contactForm',
-            with: ['message' => $this->data],
+            with: ['data' => $this->data],
         );
     }
 

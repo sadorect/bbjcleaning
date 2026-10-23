@@ -25,7 +25,7 @@ class NewContactSubmission extends Notification
             ->subject('New Contact Form Submission')
             ->line('New contact form submission from: ' . $this->contact['name'])
             ->line('Email: ' . $this->contact['email'])
-            ->line('Phone: ' . $this->contact['phone'])
+            ->line('Phone: ' . ($this->contact['phone'] ?? 'Not provided'))
             ->line('Service: ' . $this->contact['service'])
             ->line('Message: ' . $this->contact['message'])
             ->action('View in Admin Panel', url('/admin/contacts'));

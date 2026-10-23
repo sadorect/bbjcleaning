@@ -83,7 +83,7 @@ class FormsTest extends TestCase
 
     public function test_admin_can_log_in_and_out(): void
     {
-        $admin = User::factory()->create(['password' => bcrypt('secret-pass-1')]);
+        $admin = User::factory()->create(['password' => bcrypt('secret-pass-1'), 'role' => 'admin']);
 
         $this->post('/admin/login', ['email' => $admin->email, 'password' => 'wrong'])->assertSessionHasErrors();
         $this->assertGuest();

@@ -8,7 +8,7 @@ class CareerController extends Controller
 {
     public function index()
     {
-        return view();
+        return redirect()->route('careers.public');
     }
     public function public()
     {
